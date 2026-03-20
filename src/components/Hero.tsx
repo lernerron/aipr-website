@@ -19,14 +19,14 @@ export default function Hero() {
             </p>
           </div>
 
-          {/* BALA Award badge */}
-          <div className="flex-1 flex justify-center md:justify-end">
+          {/* BALA Award badge — sized to match hero text height */}
+          <div className="flex-1 flex justify-center md:justify-end self-center">
             <Image
               src="/images/2019-BALA-Winner-Mark-White-png-500x369.png"
               alt="Best of American Living Award Winner"
-              width={160}
-              height={118}
-              className="w-28 md:w-36 lg:w-40 h-auto"
+              width={240}
+              height={177}
+              className="w-36 md:w-48 lg:w-56 h-auto"
             />
           </div>
         </div>
