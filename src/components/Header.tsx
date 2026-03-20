@@ -30,7 +30,10 @@ export default function Header() {
             />
           </a>
 
-          <div className="hidden md:flex flex-col items-center text-center">
+          <div className="hidden md:flex items-center gap-3">
+            <span className="text-xs lg:text-sm font-bold text-text-light tracking-wide uppercase leading-tight text-right">
+              #1 US<br />Dealer of
+            </span>
             <Image
               src="/images/sitltz-logo.jpg"
               alt="Stiltz Homelifts"
@@ -38,9 +41,6 @@ export default function Header() {
               height={44}
               className="h-9 lg:h-10 w-auto"
             />
-            <span className="text-xs font-bold text-text-light mt-0.5 tracking-wide uppercase">
-              #1 US Dealer
-            </span>
           </div>
 
           <div className="hidden md:block text-right">
@@ -90,7 +90,7 @@ export default function Header() {
             <li>
               <a
                 href="/contact-us/"
-                className="inline-block mt-2 md:mt-0 px-7 py-2.5 bg-primary text-white font-bold text-base lg:text-lg rounded-lg no-underline border-2 border-primary hover:bg-primary-hover hover:border-primary-hover transition-all"
+                className="inline-block mt-2 md:mt-0 px-7 py-2.5 bg-primary text-white font-bold text-base lg:text-lg rounded-lg no-underline border-2 border-primary hover:bg-primary-hover hover:border-primary-hover hover:text-white transition-all"
               >
                 Contact Us
               </a>
