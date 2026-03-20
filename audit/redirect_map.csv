@@ -1,0 +1,23 @@
+old_url,new_url,redirect_type,priority,notes
+/,/,none,high,URL matches - no redirect needed
+/contact-us/,/contact-us,301,high,Trailing slash removed
+/about-us/,/about-us,301,high,Trailing slash removed
+/what-we-do/,/what-we-do,301,medium,Sub-page of About Us
+/about-the-owners/,/about-the-owners,301,medium,Sub-page of About Us
+/products-and-services/,/products-and-services,301,high,Trailing slash removed
+/platform-lifts-elevators/,/platform-lifts-elevators,301,high,Trailing slash removed
+/ramps/,/ramps,301,high,Trailing slash removed
+/accessible-showers/,/accessible-showers,301,high,Trailing slash removed
+/accessible-sink/,/accessible-sink,301,medium,Trailing slash removed
+/grab-bars-and-handrails/,/grab-bars-and-handrails,301,high,Trailing slash removed
+/ceiling-overhead-lifts/,/ceiling-overhead-lifts,301,medium,Trailing slash removed
+/doors/,/doors,301,medium,Trailing slash removed
+/bathroom-safety/,/bathroom-safety,301,medium,Trailing slash removed
+/traditional-remodels/,/traditional-remodels,301,medium,Trailing slash removed
+/portfolio/,/portfolio,301,high,Trailing slash removed
+/testimonials/,/testimonials,301,medium,Trailing slash removed
+/consulting/,/consulting,301,medium,Trailing slash removed
+/wp-content/*,,410,low,WordPress assets - gone
+/wp-admin,,410,low,WordPress admin - gone
+/feed,,410,low,WordPress RSS - gone
+/?p=*,,301,low,WordPress ID URLs - redirect to correct page

@@ -1,0 +1,26 @@
+{
+  "slug": "ramps",
+  "title": "Ramps",
+  "metaTitle": "Ramps - Aging in Place Remodeling",
+  "metaDescription": "Aging-In-Place Remodeling constructs and installs ramps of all types — modular aluminum and custom built-in solutions for home accessibility.",
+  "h1": "Ramps",
+  "intro": "Aging-In-Place Remodeling constructs and installs ramps of all types. We offer both aluminum modular ramps and custom built-in solutions to address residential accessibility challenges. As a major contractor for the San Diego VA, we possess expertise in selecting appropriate ramp types based on site conditions and individual mobility requirements.",
+  "keyInfo": "The general rule of thumb for ramp layout is that there needs to be one foot of ramp for every inch of rise.",
+  "subServices": [
+    {
+      "name": "Threshold & Portable Ramps",
+      "description": "Multiple ramping solutions for minor elevation changes. We are an authorized dealer for various threshold ramp brands.",
+      "image": null
+    },
+    {
+      "name": "Modular Ramps",
+      "description": "The EZ-ACCESS Modular Ramp system is an excellent choice when accessibility needs extend beyond the scope of a portable ramp. Aluminum construction, installable and removable with minimal landscape impact. Best for short-term needs under 2 years.",
+      "image": "/images/Ramps-Page-Modular-Ramp-768x768.jpg"
+    },
+    {
+      "name": "Custom Ramps",
+      "description": "For the ultimate in accessibility and aesthetics, a built-in-place ramp is the best option. More labor-intensive but better appearance and potential to add home value.",
+      "image": null
+    }
+  ]
+}

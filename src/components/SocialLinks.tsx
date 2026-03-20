@@ -1,7 +1,7 @@
 import { Facebook, Instagram, Youtube } from "lucide-react";
 
 const socialLinks = [
-  { icon: Facebook, href: "https://www.facebook.com/aginginplaceremodeling", label: "Facebook" },
+  { icon: Facebook, href: "https://www.facebook.com/AgingInPlaceRemodeling", label: "Facebook" },
   {
     label: "Pinterest",
     href: "https://www.pinterest.com/aginginplaceremodeling",

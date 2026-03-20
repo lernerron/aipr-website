@@ -1,0 +1,30 @@
+{
+  "slug": "bathroom-safety",
+  "title": "Bathroom Safety",
+  "metaTitle": "Bathroom Safety - Aging in Place Remodeling",
+  "metaDescription": "Bathroom safety solutions including walk-in tubs, bath seats, bath lifts, and Safeway Step. The most dangerous room in the home made safe.",
+  "h1": "Bathroom Safety",
+  "intro": "Bathrooms are considered the most dangerous room in the home. More injuries are caused in that one room than the rest of the home combined. We address bathroom hazards including high tub thresholds, slippery tile floors, and inadequate lighting. We address bathroom accessibility on approximately 90% of our annual projects.",
+  "subServices": [
+    {
+      "name": "Walk-in Bathtubs",
+      "description": "Multiple styles from various manufacturers, providing safe entry and exit for bathing.",
+      "image": "/images/WIT-5-2-1-768x768.jpg"
+    },
+    {
+      "name": "Safeway Step",
+      "description": "An insert solution for bathtubs when full shower remodels aren't feasible. A quick, affordable option to reduce tub threshold height.",
+      "image": null
+    },
+    {
+      "name": "Bath Seats",
+      "description": "Wall-mounted seating requiring proper structural support for safe, comfortable bathing.",
+      "image": null
+    },
+    {
+      "name": "Bath Lifts",
+      "description": "Devices allowing users to enter and exit traditional bathtubs with ease, lowering and raising from the tub floor.",
+      "image": null
+    }
+  ]
+}

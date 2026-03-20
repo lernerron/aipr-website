@@ -1,0 +1,45 @@
+{
+  "slug": "grab-bars-and-handrails",
+  "title": "Grab Bars & Handrails",
+  "metaTitle": "San Diego's Premiere Grab Bars and Handrails Installer",
+  "metaDescription": "Aging-In-Place Remodeling is San Diego's Premiere Grab Bars and Handrails installer offering a wide variety of bars including custom fabricated handrails.",
+  "h1": "Grab Bars & Handrails",
+  "intro": "Aging-In-Place Remodeling has installed over 4,000 grab bars and handrails. We maintain an inventory of 100+ grab bars in white and stainless steel, ranging from 16\" to 48\", with typical fulfillment within 24-48 hours. We install across tile, fiberglass, drywall, and other materials while offering aesthetic customization to match home décor.",
+  "subServices": [
+    {
+      "name": "Straight Grab Bars",
+      "description": "Available in 16\", 24\", and 32\" lengths. 1¼\" diameter stainless steel construction, welded flanges rated for 300+ lbs, concealed flange covers, available in white, stainless, or custom finishes.",
+      "image": null
+    },
+    {
+      "name": "Angled Grab Bars",
+      "description": "Multiple configurations of curved or angled bars suitable for toilet areas or continuous wall coverage, available in various sizes and finishes.",
+      "image": null
+    },
+    {
+      "name": "Custom Grab Bars",
+      "description": "Metal fabrication services producing bars in specific sizes, designs, or finishes, with powder-coating or anodizing options available.",
+      "image": null
+    },
+    {
+      "name": "Handrails",
+      "description": "Custom design and installation for interior/exterior applications using metal, wood, or composite materials.",
+      "image": null
+    },
+    {
+      "name": "Extend A Hand Grab Bar",
+      "description": "Patented folding and locking grab bar combining a conventional wall-mounted bar with an extension arm supporting 600+ lbs, extending 12\" when raised.",
+      "image": null
+    },
+    {
+      "name": "Super Pole",
+      "description": "Expansion fit, floor to ceiling pole providing support for sitting/standing, installable in any room.",
+      "image": null
+    },
+    {
+      "name": "Fold Up Safety Rails",
+      "description": "Space-saving balance-assist aids with flexible hand positions, swinging against walls. Available in powder-coated steel or stainless, supporting up to 440 lbs.",
+      "image": null
+    }
+  ]
+}

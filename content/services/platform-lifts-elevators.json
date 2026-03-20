@@ -1,0 +1,30 @@
+{
+  "slug": "platform-lifts-elevators",
+  "title": "Stiltz Lifts and Other Lifts",
+  "metaTitle": "Stiltz Lifts and Other Lifts - Aging in Place Remodeling",
+  "metaDescription": "Stiltz lifts, stair lifts, vertical platform lifts and pool lifts for home accessibility. AIPR is the #1 US Stiltz dealer.",
+  "h1": "Stiltz Lifts and Other Lifts",
+  "intro": "One of the biggest challenges we face is how to maintain or regain access to the second floor of their home. Since many of our older home designs put the bedrooms upstairs, safe access to the stairs is important.",
+  "subServices": [
+    {
+      "name": "Stiltz Lifts",
+      "description": "Stiltz home elevators provide access to all areas of your home. AIPR is the #1 US Stiltz dealer.",
+      "image": "/images/Stiltz-Website-image-32.jpg"
+    },
+    {
+      "name": "Stair Lifts",
+      "description": "Stairlifts are a great way to quickly regain your freedom. These units can typically be installed in one day.",
+      "image": null
+    },
+    {
+      "name": "Vertical Platform Lifts",
+      "description": "Vertical platform lifts provide solutions for front or back entrance steps that create accessibility challenges.",
+      "image": null
+    },
+    {
+      "name": "Pool Lifts",
+      "description": "ADA-compliant pool lift designs for pools and spas, ensuring safe water access.",
+      "image": null
+    }
+  ]
+}

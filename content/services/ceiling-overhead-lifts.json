@@ -1,0 +1,30 @@
+{
+  "slug": "ceiling-overhead-lifts",
+  "title": "Ceiling Lifts",
+  "metaTitle": "San Diego Ceiling Lifts",
+  "metaDescription": "Aging-In-Place Remodeling is San Diego and Southwest Riverside's most experienced Ceiling Lift installer. We specialize in Home Accessibility Modifications.",
+  "h1": "Ceiling Lifts",
+  "intro": "Aging-In-Place Remodeling is a certified dealer and installer for Savaria ceiling lifts, operating across San Diego, Southwest Riverside, Orange County, and St. George, Utah. We select the safest, smoothest, most reliable products on the market.",
+  "subServices": [
+    {
+      "name": "Portable FS",
+      "description": "Free-standing, versatile solution for point-to-point transfers. Aluminum construction, one-person assembly in ten minutes. Adjustable rail up to 9 feet, 440-pound capacity.",
+      "image": null
+    },
+    {
+      "name": "FastTrack",
+      "description": "Pressure-mounted pole system (2, 3, or 4-post configurations) leaving no marks on floors, walls, or ceilings. Expandable posts up to 9 feet with X-Y directional transfer capability. 440-pound capacity.",
+      "image": null
+    },
+    {
+      "name": "Savaria Monarch",
+      "description": "Lightweight (12 pounds) portable ceiling lift with rechargeable battery. Can operate with or without handheld controls, 440-pound capacity, multi-track compatible.",
+      "image": null
+    },
+    {
+      "name": "Savaria Fixed Ceiling Lift",
+      "description": "Advanced system operating with FastTrack rail. 440 or 660-pound capacity options, battery-powered with charging station, hand-held remote control.",
+      "image": "/images/Savaria-Fixed-Ceiling-Lift-FL-Healthcare-1-1-768x768.jpg"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "slug": "accessible-showers",
+  "title": "Accessible Showers",
+  "metaTitle": "Accessible Showers - Aging in Place Remodeling",
+  "metaDescription": "Aging-In-Place Remodeling is an accessible showers & bathroom specialist, creating showers that make our clients feel comfortable and secure while bathing.",
+  "h1": "Accessible Showers",
+  "intro": "We specialize in accessible shower and bathroom remodeling, having completed hundreds of bathroom renovations. We primarily replace existing tubs or showers with barrier-free shower options and can eliminate thresholds that create safety concerns. Our designs benefit both users and caregivers assisting with bathing.",
+  "subServices": [
+    {
+      "name": "Tile Roll-In Showers",
+      "description": "A properly designed roll-in shower can be a game-changer for many people. When the shower floor and the bathroom floor are level with each other, no barrier exists.",
+      "image": "/images/Home-Page-Accessible-Showers-768x768.jpg"
+    },
+    {
+      "name": "Fiberglass Roll-In Showers",
+      "description": "Fiberglass systems for clients wanting rapid transformation of bathtubs or high-threshold showers into low or no-threshold options, often completed in a single day.",
+      "image": null
+    },
+    {
+      "name": "Threshold Replacement",
+      "description": "An alternative where existing showers can be modified by replacing only the threshold, offering quicker completion and lower costs while maintaining the existing shower structure.",
+      "image": null
+    },
+    {
+      "name": "Wet Room",
+      "description": "Essentially a large shower that has a toilet and vanity in it, with waterproofed surfaces and central drains — the ultimate accessible shower.",
+      "image": null
+    }
+  ]
+}

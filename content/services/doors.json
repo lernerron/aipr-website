@@ -1,0 +1,30 @@
+{
+  "slug": "doors",
+  "title": "Doors",
+  "metaTitle": "Doors - Aging in Place Remodeling",
+  "metaDescription": "Door widening, sliding, pocket, barn, and automated doors for home accessibility. Aging-In-Place Remodeling modifies doorways for wheelchair and mobility access.",
+  "h1": "Doors",
+  "intro": "Doors very often present a huge barrier to our clients. Over many years, we've modified hundreds of doorways. Common problems include insufficient width for access, doors blocking pathways, difficult handles/operation, and rough movement.",
+  "subServices": [
+    {
+      "name": "Door Widening",
+      "description": "The most frequently requested service. Older homes typically have 24-30\" doorways, but wheelchairs require 26\" minimum. We install doors reaching at least 36\" or wider when structurally feasible.",
+      "image": "/images/Home-Page-Doors-768x768.jpg"
+    },
+    {
+      "name": "Sliding/Pocket/Barn Doors",
+      "description": "Replace traditional swinging doors that create mobility obstacles. Linear-path doors eliminate the large swing radius and dexterity demands.",
+      "image": null
+    },
+    {
+      "name": "Exterior Doors",
+      "description": "ADA-compliant exterior doors from partner manufacturers. Work effectively combined with custom ramp solutions for outdoor accessibility.",
+      "image": null
+    },
+    {
+      "name": "Automated Doors",
+      "description": "Push-button door openers providing user independence. Installable on interior/exterior swinging doors and gates within hours. We are dealers for Open Sesame Door Openers.",
+      "image": null
+    }
+  ]
+}
