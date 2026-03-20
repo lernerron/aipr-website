@@ -31,8 +31,8 @@ export default function Header() {
           </a>
 
           <div className="hidden md:flex items-center gap-3">
-            <span className="text-xs lg:text-sm font-bold text-text-light tracking-wide uppercase leading-tight text-right">
-              #1 US<br />Dealer of
+            <span className="text-xs lg:text-sm font-bold text-text-light tracking-wide uppercase whitespace-nowrap">
+              #1 US Dealer of
             </span>
             <Image
               src="/images/sitltz-logo.jpg"
