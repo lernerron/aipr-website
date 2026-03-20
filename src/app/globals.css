@@ -39,14 +39,15 @@ body {
   outline-offset: 2px;
 }
 
-a {
+/* Link styles scoped to body text — buttons/nav control their own colors */
+a:not([class]) {
   color: var(--color-link);
   text-decoration: none;
   font-weight: 500;
   transition: color 0.2s ease;
 }
 
-a:hover {
+a:not([class]):hover {
   color: var(--color-primary-hover);
   text-decoration: underline;
 }
