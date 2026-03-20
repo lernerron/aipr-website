@@ -1,12 +1,5 @@
-import { Facebook, Instagram, Home, Youtube } from "lucide-react";
 import Button from "@/components/ui/Button";
-
-const socialLinks = [
-  { icon: Facebook, href: "https://www.facebook.com/aginginplaceremodeling", label: "Facebook" },
-  { icon: Instagram, href: "https://www.instagram.com/aginginplaceremodeling", label: "Instagram" },
-  { icon: Home, href: "https://www.houzz.com/pro/aipremodeling", label: "Houzz" },
-  { icon: Youtube, href: "https://www.youtube.com/@AginginPlaceRemodeling", label: "YouTube" },
-];
+import SocialLinks from "@/components/SocialLinks";
 
 export default function FooterCTA() {
   return (
@@ -29,33 +22,8 @@ export default function FooterCTA() {
           Contact Us Today
         </Button>
 
-        {/* Social icons */}
-        <div className="flex justify-center gap-5 mt-10">
-          {socialLinks.map(({ icon: Icon, href, label }) => (
-            <a
-              key={label}
-              href={href}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={label}
-              className="text-primary hover:text-primary-hover transition-colors"
-            >
-              <Icon size={28} strokeWidth={1.5} />
-            </a>
-          ))}
-          {/* Pinterest */}
-          <a
-            href="https://www.pinterest.com/aginginplaceremodeling"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Pinterest"
-            className="text-primary hover:text-primary-hover transition-colors"
-          >
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-              <line x1="12" y1="1" x2="12" y2="23" />
-              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
-            </svg>
-          </a>
+        <div className="mt-10 flex justify-center">
+          <SocialLinks size={28} />
         </div>
       </div>
     </section>

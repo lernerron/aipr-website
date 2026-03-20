@@ -1,5 +1,6 @@
 import { Phone, Mail, MapPin } from "lucide-react";
 import Image from "next/image";
+import SocialLinks from "@/components/SocialLinks";
 
 const locations = [
   { name: "San Diego", phone: "(858) 776-8700", tel: "8587768700" },
@@ -57,6 +58,11 @@ export default function ContactInfo() {
             </p>
           </div>
         </div>
+      </div>
+
+      {/* Social Media */}
+      <div className="bg-white rounded-xl border border-border p-6 md:p-8">
+        <SocialLinks />
       </div>
 
       {/* Trust Signals */}
