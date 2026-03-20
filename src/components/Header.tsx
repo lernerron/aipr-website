@@ -15,17 +15,17 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="bg-white border-b-2 border-gray-200 sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-5 py-4 lg:py-5">
-        {/* Top row: logos + phone */}
-        <div className="flex items-center justify-between">
+    <header className="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+      <div className="max-w-7xl mx-auto px-5">
+        {/* Top row: logos + phone — balanced with consistent heights */}
+        <div className="flex items-center justify-between py-4 lg:py-5">
           <a href="/" className="shrink-0">
             <Image
               src="/images/aging-in-place-logo.png"
               alt="Aging in Place Remodeling"
-              width={280}
-              height={60}
-              className="w-48 md:w-64 lg:w-72 h-auto"
+              width={220}
+              height={48}
+              className="w-40 md:w-48 lg:w-52 h-auto"
               priority
             />
           </a>
@@ -34,17 +34,19 @@ export default function Header() {
             <Image
               src="/images/sitltz-logo.jpg"
               alt="Stiltz Homelifts"
-              width={160}
-              height={60}
-              className="h-14 lg:h-16 w-auto"
+              width={120}
+              height={44}
+              className="h-9 lg:h-10 w-auto"
             />
-            <span className="text-sm font-bold text-text-main mt-1">#1 US Dealer</span>
+            <span className="text-xs font-bold text-text-light mt-0.5 tracking-wide uppercase">
+              #1 US Dealer
+            </span>
           </div>
 
           <div className="hidden md:block text-right">
             <a
               href="tel:8587768700"
-              className="text-2xl lg:text-3xl font-bold text-primary no-underline hover:text-primary-hover"
+              className="text-xl lg:text-2xl font-bold text-primary no-underline hover:text-primary-hover transition-colors"
             >
               (858) 776-8700
             </a>
@@ -67,19 +69,19 @@ export default function Header() {
           </button>
         </div>
 
-        {/* Navigation */}
+        {/* Navigation — centered, separated by a subtle top border */}
         <nav
           className={`${
-            menuOpen ? "max-h-96 opacity-100 mt-4" : "max-h-0 opacity-0 md:max-h-none md:opacity-100"
-          } md:mt-4 overflow-hidden transition-all duration-300 ease-in-out`}
+            menuOpen ? "max-h-96 opacity-100 pb-4" : "max-h-0 opacity-0 md:max-h-none md:opacity-100"
+          } md:border-t md:border-gray-100 overflow-hidden transition-all duration-300 ease-in-out`}
           aria-label="Main navigation"
         >
-          <ul className="flex flex-col md:flex-row md:items-center gap-1 md:gap-6 lg:gap-8">
+          <ul className="flex flex-col md:flex-row md:items-center md:justify-center gap-1 md:gap-8 lg:gap-10 md:py-3">
             {navItems.map((item) => (
               <li key={item.label}>
                 <a
                   href={item.href}
-                  className="block py-2 md:py-1 text-lg font-semibold text-text-main no-underline hover:text-primary transition-colors"
+                  className="block py-2 md:py-1 text-base lg:text-lg font-semibold text-text-main no-underline hover:text-primary transition-colors"
                 >
                   {item.label}
                 </a>
@@ -88,15 +90,15 @@ export default function Header() {
             <li>
               <a
                 href="/contact-us/"
-                className="inline-block mt-2 md:mt-0 px-6 py-3 bg-primary text-white font-bold text-lg rounded-lg border-2 border-primary no-underline hover:bg-white hover:text-primary transition-colors"
+                className="inline-block mt-2 md:mt-0 px-7 py-2.5 bg-accent text-white font-bold text-base lg:text-lg rounded-lg no-underline hover:brightness-110 transition-all shadow-sm"
               >
                 Contact Us
               </a>
             </li>
           </ul>
 
-          {/* Mobile phone + Stiltz */}
-          <div className="md:hidden mt-4 pt-4 border-t border-gray-200 space-y-3">
+          {/* Mobile phone */}
+          <div className="md:hidden mt-4 pt-4 border-t border-gray-200">
             <a
               href="tel:8587768700"
               className="block text-xl font-bold text-primary no-underline text-center"
