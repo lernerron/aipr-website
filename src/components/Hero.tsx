@@ -2,12 +2,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section
-      className="relative py-16 md:py-20 lg:py-24"
-      style={{
-        background: "radial-gradient(circle at center, #1c5064 0%, #001a24 100%)",
-      }}
-    >
+    <section className="relative py-16 md:py-20 lg:py-24 bg-[radial-gradient(circle_at_center,#1c5064_0%,#001a24_100%)]">
       <div className="max-w-7xl mx-auto px-5">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           {/* Spacer on left for desktop symmetry */}

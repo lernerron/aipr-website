@@ -1,3 +1,5 @@
+import Button from "@/components/ui/Button";
+
 const testimonials = [
   {
     quote: [
@@ -43,12 +45,9 @@ export default function Testimonials() {
           ))}
         </div>
         <div className="text-center mt-10">
-          <a
-            href="/testimonials"
-            className="inline-block px-8 py-4 font-bold text-lg text-primary border-2 border-primary rounded-lg no-underline hover:bg-primary hover:text-white transition-colors"
-          >
+          <Button href="/testimonials" variant="secondary" size="lg">
             Read More Testimonials
-          </a>
+          </Button>
         </div>
       </div>
     </section>

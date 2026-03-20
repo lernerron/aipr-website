@@ -1,4 +1,5 @@
 import { Facebook, Instagram, Home, Youtube } from "lucide-react";
+import Button from "@/components/ui/Button";
 
 const socialLinks = [
   { icon: Facebook, href: "https://www.facebook.com/aginginplaceremodeling", label: "Facebook" },
@@ -24,12 +25,9 @@ export default function FooterCTA() {
         <p className="text-lg text-text-light mb-6">
           Get in touch with an accessible home specialist
         </p>
-        <a
-          href="/contact-us"
-          className="inline-block px-8 py-4 bg-primary text-white font-bold text-lg uppercase rounded no-underline border-2 border-primary hover:bg-primary-hover transition-colors"
-        >
+        <Button href="/contact-us" size="lg" uppercase>
           Contact Us Today
-        </a>
+        </Button>
 
         {/* Social icons */}
         <div className="flex justify-center gap-5 mt-10">
@@ -45,7 +43,7 @@ export default function FooterCTA() {
               <Icon size={28} strokeWidth={1.5} />
             </a>
           ))}
-          {/* Pinterest - custom SVG since lucide doesn't have it */}
+          {/* Pinterest */}
           <a
             href="https://www.pinterest.com/aginginplaceremodeling"
             target="_blank"

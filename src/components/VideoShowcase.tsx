@@ -1,7 +1,11 @@
+import Button from "@/components/ui/Button";
+import Section from "@/components/ui/Section";
+import Container from "@/components/ui/Container";
+
 export default function VideoShowcase() {
   return (
-    <section className="py-16 md:py-20 lg:py-24 bg-bg">
-      <div className="max-w-4xl mx-auto px-5 text-center">
+    <Section background="default">
+      <Container narrow className="text-center">
         <div className="relative pb-[56.25%] h-0 rounded-xl overflow-hidden border-4 border-border shadow-lg">
           <iframe
             title="AIP Remodeling Testimonial Video"
@@ -13,16 +17,16 @@ export default function VideoShowcase() {
           />
         </div>
         <div className="mt-10">
-          <a
+          <Button
             href="https://www.youtube.com/@AginginPlaceRemodeling"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block px-8 py-4 bg-primary text-white font-bold text-lg rounded-lg border-2 border-primary no-underline hover:bg-primary-hover transition-colors"
+            size="lg"
           >
             Watch More Videos
-          </a>
+          </Button>
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }

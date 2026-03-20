@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AIPR Design System Preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #154c68;
+    --primary-hover: #0c2e40;
+    --primary-light: #1a6f9a;
+    --accent: #c4724a;
+    --bg: #fdfdfd;
+    --bg-alt: #f1f5f9;
+    --bg-warm: #f8fafc;
+    --text-main: #1f2937;
+    --text-light: #4b5563;
+    --white: #ffffff;
+    --border: #e5e7eb;
+    --success: #16a34a;
+    --warning: #d97706;
+    --error: #dc2626;
+    --info: #1a6f9a;
+    --font-heading: 'Playfair Display', Georgia, serif;
+    --font-body: 'DM Sans', system-ui, sans-serif;
+    --font-mono: 'DM Mono', monospace;
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+  }
+
+  [data-theme="dark"] {
+    --primary: #3a8ab5;
+    --primary-hover: #5ba3c9;
+    --primary-light: #4d9ec7;
+    --accent: #d4896a;
+    --bg: #0f1419;
+    --bg-alt: #1a2332;
+    --bg-warm: #151d28;
+    --text-main: #e2e8f0;
+    --text-light: #94a3b8;
+    --white: #1e293b;
+    --border: #334155;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: var(--font-body);
+    color: var(--text-main);
+    background: var(--bg);
+    font-size: 18px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    transition: background 0.3s, color 0.3s;
+  }
+
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+  /* Theme Toggle */
+  .theme-bar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: var(--primary); color: var(--white);
+    padding: 12px 24px; display: flex; justify-content: space-between; align-items: center;
+    font-size: 14px; font-weight: 600;
+  }
+  .theme-bar button {
+    background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3);
+    color: white; padding: 6px 16px; border-radius: var(--radius-sm);
+    cursor: pointer; font-family: var(--font-body); font-size: 14px; font-weight: 600;
+  }
+  .theme-bar button:hover { background: rgba(255,255,255,0.25); }
+
+  /* Sections */
+  section { padding: 80px 0; }
+  section:nth-child(even) { background: var(--bg-alt); }
+  section:first-of-type { margin-top: 48px; }
+
+  .section-label {
+    font-family: var(--font-body); font-size: 12px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 2px; color: var(--accent);
+    margin-bottom: 8px;
+  }
+  .section-title {
+    font-family: var(--font-heading); font-size: 36px; font-weight: 700;
+    color: var(--primary); line-height: 1.25; margin-bottom: 40px;
+  }
+
+  /* Color Swatches */
+  .swatch-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px;
+    margin-bottom: 48px;
+  }
+  .swatch {
+    border-radius: var(--radius-md); overflow: hidden;
+    border: 1px solid var(--border); background: var(--white);
+  }
+  .swatch-color { height: 80px; }
+  .swatch-info { padding: 12px; }
+  .swatch-name { font-weight: 700; font-size: 14px; color: var(--text-main); }
+  .swatch-hex { font-family: var(--font-mono); font-size: 13px; color: var(--text-light); }
+
+  /* Typography Specimen */
+  .type-specimen { margin-bottom: 48px; }
+  .type-row {
+    padding: 32px 0; border-bottom: 1px solid var(--border);
+    display: grid; grid-template-columns: 200px 1fr; gap: 24px; align-items: baseline;
+  }
+  .type-label { font-size: 13px; font-weight: 600; color: var(--text-light); text-transform: uppercase; letter-spacing: 1px; }
+  .type-display { font-family: var(--font-heading); font-size: 48px; font-weight: 700; line-height: 1.2; color: var(--text-main); }
+  .type-h2 { font-family: var(--font-heading); font-size: 36px; font-weight: 700; line-height: 1.25; color: var(--primary); }
+  .type-h3 { font-family: var(--font-heading); font-size: 24px; font-weight: 600; line-height: 1.3; color: var(--text-main); }
+  .type-body { font-family: var(--font-body); font-size: 18px; line-height: 1.7; color: var(--text-main); }
+  .type-small { font-family: var(--font-body); font-size: 14px; line-height: 1.5; color: var(--text-light); }
+  .type-mono { font-family: var(--font-mono); font-size: 15px; color: var(--text-main); }
+
+  /* Buttons */
+  .btn-row { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 32px; }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    padding: 14px 28px; border-radius: var(--radius-md);
+    font-family: var(--font-body); font-size: 16px; font-weight: 700;
+    text-decoration: none; cursor: pointer; border: 2px solid transparent;
+    transition: all 0.2s ease;
+  }
+  .btn-primary { background: var(--primary); color: white; border-color: var(--primary); }
+  .btn-primary:hover { background: var(--primary-hover); border-color: var(--primary-hover); }
+  .btn-secondary { background: transparent; color: var(--primary); border-color: var(--primary); }
+  .btn-secondary:hover { background: var(--primary); color: white; }
+  .btn-ghost { background: transparent; color: var(--primary); border-color: transparent; }
+  .btn-ghost:hover { background: var(--bg-alt); }
+  .btn-sm { padding: 8px 18px; font-size: 14px; }
+  .btn-lg { padding: 18px 36px; font-size: 18px; }
+
+  /* Cards */
+  .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-bottom: 32px; }
+  .card {
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: var(--radius-lg); overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+  .card-img { height: 200px; background: var(--bg-alt); display: flex; align-items: center; justify-content: center; color: var(--text-light); font-size: 14px; }
+  .card-body { padding: 24px; }
+  .card-title { font-family: var(--font-heading); font-size: 20px; font-weight: 600; color: var(--primary); margin-bottom: 8px; }
+  .card-text { font-size: 15px; color: var(--text-light); line-height: 1.6; }
+
+  /* Form Inputs */
+  .form-group { margin-bottom: 20px; max-width: 400px; }
+  .form-label { display: block; font-size: 14px; font-weight: 600; color: var(--text-main); margin-bottom: 6px; }
+  .form-input {
+    width: 100%; padding: 12px 16px; border: 1px solid var(--border);
+    border-radius: var(--radius-sm); font-family: var(--font-body);
+    font-size: 16px; color: var(--text-main); background: var(--white);
+    transition: border-color 0.2s;
+  }
+  .form-input:focus { outline: none; border-color: var(--primary-light); box-shadow: 0 0 0 3px rgba(26,111,154,0.15); }
+
+  /* Alerts */
+  .alert-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-bottom: 32px; }
+  .alert {
+    padding: 14px 18px; border-radius: var(--radius-sm); font-size: 14px; font-weight: 500;
+    border-left: 4px solid;
+  }
+  .alert-success { background: #f0fdf4; border-color: var(--success); color: #15803d; }
+  .alert-warning { background: #fffbeb; border-color: var(--warning); color: #92400e; }
+  .alert-error { background: #fef2f2; border-color: var(--error); color: #991b1b; }
+  .alert-info { background: #f0f9ff; border-color: var(--info); color: #075985; }
+  [data-theme="dark"] .alert-success { background: #052e16; color: #4ade80; }
+  [data-theme="dark"] .alert-warning { background: #451a03; color: #fbbf24; }
+  [data-theme="dark"] .alert-error { background: #450a0a; color: #f87171; }
+  [data-theme="dark"] .alert-info { background: #0c4a6e; color: #7dd3fc; }
+
+  /* Contrast Grid */
+  .contrast-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 32px; }
+  .contrast-pair {
+    padding: 20px; border-radius: var(--radius-md); font-size: 16px; font-weight: 600;
+  }
+
+  /* Mockup: Hero */
+  .mock-hero {
+    background: radial-gradient(circle at center, #1c5064 0%, #001a24 100%);
+    padding: 64px 48px; border-radius: var(--radius-lg); text-align: center; margin-bottom: 48px;
+  }
+  .mock-hero h1 { font-family: var(--font-heading); font-size: 42px; font-weight: 800; color: white; line-height: 1.2; margin-bottom: 12px; }
+  .mock-hero p { font-family: var(--font-body); font-size: 20px; color: rgba(255,255,255,0.85); margin-bottom: 28px; }
+  .mock-hero .btn-primary { background: var(--primary-light); border-color: var(--primary-light); }
+
+  /* Mockup: Testimonial */
+  .mock-testimonial {
+    background: var(--bg-warm); padding: 40px; border-left: 6px solid var(--primary);
+    border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin-bottom: 32px;
+  }
+  .mock-testimonial blockquote {
+    font-family: var(--font-body); font-size: 18px; font-style: italic;
+    color: var(--text-main); line-height: 1.7; margin-bottom: 16px;
+  }
+  .mock-testimonial cite {
+    font-family: var(--font-heading); font-size: 18px; font-weight: 700;
+    color: var(--primary); font-style: normal;
+  }
+
+  /* Mockup: CTA Footer */
+  .mock-cta {
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: var(--radius-lg); padding: 48px; text-align: center; margin-bottom: 32px;
+  }
+  .mock-cta h2 { font-family: var(--font-heading); font-size: 28px; font-weight: 600; color: var(--text-main); margin-bottom: 8px; }
+  .mock-cta .phone { font-size: 28px; font-weight: 800; color: var(--primary); margin: 12px 0; }
+  .mock-cta p { color: var(--text-light); margin-bottom: 20px; }
+
+  /* Spacing Scale */
+  .spacing-row { display: flex; align-items: center; gap: 16px; margin-bottom: 12px; }
+  .spacing-block { background: var(--primary); border-radius: 2px; height: 24px; }
+  .spacing-label { font-family: var(--font-mono); font-size: 13px; color: var(--text-light); min-width: 120px; }
+
+  @media (max-width: 768px) {
+    .type-row { grid-template-columns: 1fr; gap: 8px; }
+    .type-display { font-size: 32px; }
+    .type-h2 { font-size: 28px; }
+    .mock-hero h1 { font-size: 28px; }
+    .mock-hero { padding: 40px 24px; }
+    .contrast-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="theme-bar">
+  <span>AIPR Design System Preview</span>
+  <button onclick="toggleTheme()">Toggle Dark Mode</button>
+</div>
+
+<!-- COLOR PALETTE -->
+<section>
+  <div class="container">
+    <div class="section-label">Color Palette</div>
+    <div class="section-title">Restrained &mdash; Trust Through Restraint</div>
+    <div class="swatch-grid">
+      <div class="swatch"><div class="swatch-color" style="background:#154c68"></div><div class="swatch-info"><div class="swatch-name">Primary</div><div class="swatch-hex">#154c68</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#0c2e40"></div><div class="swatch-info"><div class="swatch-name">Primary Hover</div><div class="swatch-hex">#0c2e40</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#1a6f9a"></div><div class="swatch-info"><div class="swatch-name">Primary Light</div><div class="swatch-hex">#1a6f9a</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#c4724a"></div><div class="swatch-info"><div class="swatch-name">Accent (Warm)</div><div class="swatch-hex">#c4724a</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#fdfdfd"></div><div class="swatch-info"><div class="swatch-name">Background</div><div class="swatch-hex">#fdfdfd</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#f1f5f9"></div><div class="swatch-info"><div class="swatch-name">Background Alt</div><div class="swatch-hex">#f1f5f9</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#1f2937"></div><div class="swatch-info"><div class="swatch-name">Text Main</div><div class="swatch-hex">#1f2937</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#4b5563"></div><div class="swatch-info"><div class="swatch-name">Text Light</div><div class="swatch-hex">#4b5563</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#e5e7eb"></div><div class="swatch-info"><div class="swatch-name">Border</div><div class="swatch-hex">#e5e7eb</div></div></div>
+    </div>
+
+    <h3 style="font-family:var(--font-heading);font-size:24px;color:var(--primary);margin-bottom:16px;">Semantic Colors</h3>
+    <div class="alert-row">
+      <div class="alert alert-success">Success: Operation completed</div>
+      <div class="alert alert-warning">Warning: Please review</div>
+      <div class="alert alert-error">Error: Something went wrong</div>
+      <div class="alert alert-info">Info: New services available</div>
+    </div>
+
+    <h3 style="font-family:var(--font-heading);font-size:24px;color:var(--primary);margin-bottom:16px;">Contrast Combinations</h3>
+    <div class="contrast-grid">
+      <div class="contrast-pair" style="background:#154c68;color:white">White on Primary &mdash; 8.4:1 (AAA)</div>
+      <div class="contrast-pair" style="background:#0c2e40;color:white">White on Primary Hover &mdash; 13.2:1 (AAA)</div>
+      <div class="contrast-pair" style="background:#fdfdfd;color:#1f2937">Text Main on Background &mdash; 14.7:1 (AAA)</div>
+      <div class="contrast-pair" style="background:#f1f5f9;color:#1f2937">Text Main on Background Alt &mdash; 13.4:1 (AAA)</div>
+      <div class="contrast-pair" style="background:#c4724a;color:white">White on Accent &mdash; 3.2:1 (AA Large only)</div>
+      <div class="contrast-pair" style="background:#fdfdfd;color:#154c68">Primary on Background &mdash; 8.4:1 (AAA)</div>
+    </div>
+  </div>
+</section>
+
+<!-- TYPOGRAPHY -->
+<section>
+  <div class="container">
+    <div class="section-label">Typography</div>
+    <div class="section-title">Playfair Display + DM Sans</div>
+    <div class="type-specimen">
+      <div class="type-row">
+        <div class="type-label">Display / H1<br>Playfair Display 800<br>48px / 1.2</div>
+        <div class="type-display">The Premiere Safety &amp; Accessibility Remodeling Company</div>
+      </div>
+      <div class="type-row">
+        <div class="type-label">Section Heading / H2<br>Playfair Display 700<br>36px / 1.25</div>
+        <div class="type-h2">Our Products &amp; Services</div>
+      </div>
+      <div class="type-row">
+        <div class="type-label">Card Heading / H3<br>Playfair Display 600<br>24px / 1.3</div>
+        <div class="type-h3">Stiltz Lifts and Other Lifts</div>
+      </div>
+      <div class="type-row">
+        <div class="type-label">Body<br>DM Sans 400<br>18px / 1.7</div>
+        <div class="type-body">Aging-In-Place Remodeling is a full service remodeling company that specializes in providing products and services that allow people to stay in their current residence for years to come. Our goal is to create a safe, accessible and comfortable home that blends usability and visual appeal.</div>
+      </div>
+      <div class="type-row">
+        <div class="type-label">Caption<br>DM Sans 400<br>14px / 1.5</div>
+        <div class="type-small">A fully licensed (CSLB #807715) and insured General Contractor. All products and services guaranteed.</div>
+      </div>
+      <div class="type-row">
+        <div class="type-label">Monospace<br>DM Mono 400<br>15px</div>
+        <div class="type-mono">CSLB #807715 | (858) 776-8700</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BUTTONS & FORMS -->
+<section>
+  <div class="container">
+    <div class="section-label">Components</div>
+    <div class="section-title">Buttons, Inputs &amp; Cards</div>
+
+    <h3 style="font-family:var(--font-heading);font-size:24px;color:var(--primary);margin-bottom:16px;">Buttons</h3>
+    <div class="btn-row">
+      <button class="btn btn-primary btn-lg">Contact Us Today</button>
+      <button class="btn btn-primary">Get a Free Quote</button>
+      <button class="btn btn-primary btn-sm">Learn More</button>
+    </div>
+    <div class="btn-row">
+      <button class="btn btn-secondary">Read More Testimonials</button>
+      <button class="btn btn-secondary btn-sm">View Portfolio</button>
+    </div>
+    <div class="btn-row">
+      <button class="btn btn-ghost">Watch Videos</button>
+      <button class="btn btn-ghost btn-sm">See All Services</button>
+    </div>
+
+    <h3 style="font-family:var(--font-heading);font-size:24px;color:var(--primary);margin:32px 0 16px;">Form Inputs</h3>
+    <div class="form-group">
+      <label class="form-label">Full Name</label>
+      <input class="form-input" type="text" placeholder="Enter your name">
+    </div>
+    <div class="form-group">
+      <label class="form-label">Phone Number</label>
+      <input class="form-input" type="tel" placeholder="(858) 776-8700">
+    </div>
+    <div class="form-group">
+      <label class="form-label">Tell us about your project</label>
+      <textarea class="form-input" rows="3" placeholder="Describe the modifications you need..."></textarea>
+    </div>
+
+    <h3 style="font-family:var(--font-heading);font-size:24px;color:var(--primary);margin:32px 0 16px;">Service Cards</h3>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-img" style="background:linear-gradient(135deg,#154c68 0%,#1a6f9a 100%);color:rgba(255,255,255,0.7);">768 x 768 image</div>
+        <div class="card-body">
+          <div class="card-title">Accessible Showers</div>
+          <div class="card-text">Roll-in showers, threshold replacements, and wet room designs for safe, beautiful bathing.</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img" style="background:linear-gradient(135deg,#0c2e40 0%,#154c68 100%);color:rgba(255,255,255,0.7);">768 x 768 image</div>
+        <div class="card-body">
+          <div class="card-title">Grab Bars &amp; Handrails</div>
+          <div class="card-text">Professional installation of straight, angled, and fold-up safety rails throughout your home.</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img" style="background:linear-gradient(135deg,#1a6f9a 0%,#3a8ab5 100%);color:rgba(255,255,255,0.7);">768 x 768 image</div>
+        <div class="card-body">
+          <div class="card-title">Stiltz Lifts</div>
+          <div class="card-text">Quiet, compact home lifts installed in as little as 4 days. AIPR is the #1 US Stiltz dealer.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MOCKUPS -->
+<section>
+  <div class="container">
+    <div class="section-label">Product Mockups</div>
+    <div class="section-title">How It All Comes Together</div>
+
+    <h3 style="font-family:var(--font-heading);font-size:24px;color:var(--primary);margin-bottom:16px;">Hero Section</h3>
+    <div class="mock-hero">
+      <h1>The Premiere Safety &amp;<br>Accessibility Remodeling Company</h1>
+      <p>Remodeling for whatever the future holds.</p>
+      <button class="btn btn-primary btn-lg">Contact Us Today</button>
+    </div>
+
+    <h3 style="font-family:var(--font-heading);font-size:24px;color:var(--primary);margin-bottom:16px;">Testimonial</h3>
+    <div class="mock-testimonial">
+      <blockquote>&ldquo;The process was seamless and very professional. The Stiltz lift was installed in 4 days as promised and provides an easy way for us to go between the floors in our home.&rdquo;</blockquote>
+      <cite>&mdash; Michelle B. &ndash; Rancho Bernardo &ndash; 2024</cite>
+    </div>
+
+    <h3 style="font-family:var(--font-heading);font-size:24px;color:var(--primary);margin-bottom:16px;">Footer CTA</h3>
+    <div class="mock-cta">
+      <h2>Are you interested in discussing your project?</h2>
+      <p>Give us a call</p>
+      <div class="phone">(858) 776-8700</div>
+      <p>Get in touch with an accessible home specialist</p>
+      <button class="btn btn-primary btn-lg" style="text-transform:uppercase">Contact Us Today</button>
+    </div>
+  </div>
+</section>
+
+<!-- SPACING -->
+<section>
+  <div class="container">
+    <div class="section-label">Spacing Scale</div>
+    <div class="section-title">8px Base Unit &mdash; Spacious Density</div>
+    <div class="spacing-row"><div class="spacing-label">2xs &mdash; 2px</div><div class="spacing-block" style="width:2px"></div></div>
+    <div class="spacing-row"><div class="spacing-label">xs &mdash; 4px</div><div class="spacing-block" style="width:4px"></div></div>
+    <div class="spacing-row"><div class="spacing-label">sm &mdash; 8px</div><div class="spacing-block" style="width:8px"></div></div>
+    <div class="spacing-row"><div class="spacing-label">md &mdash; 16px</div><div class="spacing-block" style="width:16px"></div></div>
+    <div class="spacing-row"><div class="spacing-label">lg &mdash; 24px</div><div class="spacing-block" style="width:24px"></div></div>
+    <div class="spacing-row"><div class="spacing-label">xl &mdash; 32px</div><div class="spacing-block" style="width:32px"></div></div>
+    <div class="spacing-row"><div class="spacing-label">2xl &mdash; 48px</div><div class="spacing-block" style="width:48px"></div></div>
+    <div class="spacing-row"><div class="spacing-label">3xl &mdash; 64px</div><div class="spacing-block" style="width:64px"></div></div>
+    <div class="spacing-row"><div class="spacing-label">4xl &mdash; 80px</div><div class="spacing-block" style="width:80px"></div></div>
+    <div class="spacing-row"><div class="spacing-label">5xl &mdash; 96px</div><div class="spacing-block" style="width:96px"></div></div>
+
+    <h3 style="font-family:var(--font-heading);font-size:24px;color:var(--primary);margin:32px 0 16px;">Border Radius</h3>
+    <div style="display:flex;gap:24px;flex-wrap:wrap;align-items:end">
+      <div style="text-align:center"><div style="width:64px;height:64px;background:var(--primary);border-radius:4px"></div><div class="type-small" style="margin-top:4px">sm: 4px</div></div>
+      <div style="text-align:center"><div style="width:64px;height:64px;background:var(--primary);border-radius:8px"></div><div class="type-small" style="margin-top:4px">md: 8px</div></div>
+      <div style="text-align:center"><div style="width:64px;height:64px;background:var(--primary);border-radius:12px"></div><div class="type-small" style="margin-top:4px">lg: 12px</div></div>
+      <div style="text-align:center"><div style="width:64px;height:64px;background:var(--primary);border-radius:9999px"></div><div class="type-small" style="margin-top:4px">full: 9999px</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- MOTION -->
+<section>
+  <div class="container">
+    <div class="section-label">Motion</div>
+    <div class="section-title">Minimal-Functional</div>
+    <div class="type-body" style="max-width:700px;margin-bottom:24px">
+      Only transitions that aid comprehension. No scroll-triggered animations, no parallax, no bouncing elements. Seniors with vestibular sensitivity need visual stability.
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px;">
+      <div style="padding:24px;background:var(--white);border:1px solid var(--border);border-radius:var(--radius-md)">
+        <div class="type-label" style="margin-bottom:8px">Easing</div>
+        <div class="type-small">Enter: ease-out</div>
+        <div class="type-small">Exit: ease-in</div>
+        <div class="type-small">Move: ease-in-out</div>
+      </div>
+      <div style="padding:24px;background:var(--white);border:1px solid var(--border);border-radius:var(--radius-md)">
+        <div class="type-label" style="margin-bottom:8px">Duration</div>
+        <div class="type-small">Micro: 50-100ms (button hover)</div>
+        <div class="type-small">Short: 150-250ms (menu, cards)</div>
+        <div class="type-small">Medium: 250-400ms (modals)</div>
+      </div>
+      <div style="padding:24px;background:var(--white);border:1px solid var(--border);border-radius:var(--radius-md)">
+        <div class="type-label" style="margin-bottom:8px">Allowed Motion</div>
+        <div class="type-small">Hover lift on cards (-2px)</div>
+        <div class="type-small">Color transitions on buttons</div>
+        <div class="type-small">Menu open/close slide</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+function toggleTheme() {
+  const html = document.documentElement;
+  html.dataset.theme = html.dataset.theme === 'dark' ? '' : 'dark';
+}
+</script>
+</body>
+</html>

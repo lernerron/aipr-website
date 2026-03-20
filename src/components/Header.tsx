@@ -90,7 +90,7 @@ export default function Header() {
             <li>
               <a
                 href="/contact-us/"
-                className="inline-block mt-2 md:mt-0 px-7 py-2.5 bg-accent text-white font-bold text-base lg:text-lg rounded-lg no-underline hover:brightness-110 transition-all shadow-sm"
+                className="inline-block mt-2 md:mt-0 px-7 py-2.5 bg-primary text-white font-bold text-base lg:text-lg rounded-lg no-underline border-2 border-primary hover:bg-primary-hover hover:border-primary-hover transition-all"
               >
                 Contact Us
               </a>
